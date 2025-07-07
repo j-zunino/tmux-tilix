@@ -9,13 +9,13 @@
 # [ ] Switch to layout: Tiled
 # [ ] Floating pane
 
-for opt in config_path shiftnum layout; do
+for opt in configpath shiftnum layout; do
     export "$opt"="$(tmux show-option -gv @tilix-"$opt" 2>/dev/null)"
 done
 
 # Default config path
-if [ -z "$config_path" ]; then
-    config_path="$HOME/.config/tmux/tmux.conf"
+if [ -z "$configpath" ]; then
+    configpath="$HOME/.config/tmux/tmux.conf"
 fi
 
 # Default to US keyboard layout
@@ -34,7 +34,7 @@ if [ -n "${layout:-}" ]; then
 fi
 
 # Reload config
-tmux bind-key -n M-R source-file $config_path \\\; display-message "Reloaded $config_path"
+tmux bind-key -n M-R source-file $configpath \\\; display-message "Reloaded $configpath"
 
 # Detach / Exit
 tmux bind-key -n M-E confirm-before -p "Detach from #S (y/n):" detach-client
