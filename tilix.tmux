@@ -23,6 +23,11 @@ if [ -z "$shiftnum" ]; then
     shiftnum=")!@#$%^&*("
 fi
 
+# Default window layout
+if [ -z "$layout" ]; then
+    layout="main-vertical"
+fi
+
 # Hooks
 if [ -n "${layout:-}" ]; then
     tmux set-hook -g window-linked "select-layout \"$layout\"; select-layout -E"
