@@ -25,7 +25,7 @@ fi
 
 # Hooks
 if [ -n "${layout:-}" ]; then
-    tmux set-hook -g after-new-window "select-layout \"$layout\"; select-layout -E"
+    tmux set-hook -g window-linked "select-layout \"$layout\"; select-layout -E"
     tmux set-hook -g after-split-window "select-layout; select-layout -E"
     tmux set-hook -g after-kill-pane "select-layout; select-layout -E"
     tmux set-hook -g after-join-pane "select-layout; select-layout -E"
