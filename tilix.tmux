@@ -20,7 +20,7 @@ fi
 
 # Default to US keyboard layout
 if [ -z "$shiftnum" ]; then
-    shiftnum='!@#$%^&*()'
+    shiftnum=")!@#$%^&*("
 fi
 
 # Hooks
