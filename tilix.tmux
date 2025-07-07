@@ -89,7 +89,7 @@ tmux bind-key -n M-z resize-pane -Z
 
 # [ Popup ]
 # LazyGit
-tmux bind-key -n M-l display-popup \
+tmux bind-key -n M-L display-popup \
     -d "#{pane_current_path}" \
     -w 90% \
     -h 90% \
